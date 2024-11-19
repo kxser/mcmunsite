@@ -15,7 +15,7 @@
         <li>
           <UDropdown mode="hover" :items="conferenceItems" :close-delay="300" :popper="{ placement: 'bottom' }"
             :ui="{ width: 'w-48', ring: 'dark:ring-red-900  ring-red-900 ring-2', background: 'dark:bg-zinc-800', item: { padding: 'px-1.5 py-3', size: 'text-sm font-bold', active: 'bg-zinc-950 dark:bg-zinc-950 text-white' } }">
-            <div class="flex items-center justify-center space-x-1 w-full hover:text-gray-400">
+            <div class="flex items-center justify-center space-x-1 w-full hover:text-gray-400 ">
               <span class="text-lg">Conference Details</span>
             </div>
           </UDropdown>

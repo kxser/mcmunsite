@@ -7,8 +7,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/ui',
     '@nuxt/image',
-    '@nuxtjs/google-fonts'
-    
+    '@nuxtjs/google-fonts',
+    'nuxt-link-checker',
   ],
   googleFonts: {
     download: true,

@@ -1,0 +1,3 @@
+Mailing is done through SMTP Gmail. +
+
+Each sent mail is also logged for redundance. -
