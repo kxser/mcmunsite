@@ -1,6 +1,6 @@
 <template>
 
-  <div class="min-h-screen bg-zinc-800">
+  <div class="min-h-screen bg-zinc-900">
     <noscript>
       <div  class="fixed inset-0 bg-white z-50">
       <div class="flex flex-col items-center min-h-screen bg-gray-950">

@@ -17,7 +17,9 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/google-fonts',
     'nuxt-link-checker',
-    '@formkit/auto-animate/nuxt'
+    '@formkit/auto-animate/nuxt',
+    'nuxt-countdown',
+    '@formkit/nuxt'
   ],
   googleFonts: {
     download: true,
