@@ -20,6 +20,7 @@
     "@pinia/nuxt": "^0.7.0",
     "@tato30/vue-pdf": "^1.11.2",
     "@vue-pdf-viewer/viewer": "^1.7.0",
+    "disable-devtool": "^0.3.8",
     "nodemailer": "^6.9.16",
     "nuxt": "^3.14.159",
     "nuxt-countdown": "^1.2.0",

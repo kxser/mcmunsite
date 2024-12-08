@@ -1,4 +1,6 @@
 <template>
+      <Navbar />
+
     <div class="container">
       <h1>MUNESCO 2025 Form 1 (Delegation Application Form)</h1>
       <p>
