@@ -89,7 +89,7 @@
       </div>
     </div>
   </section>
-  <section class="bg-zinc-900 select-none">
+  <section class="bg-zinc-900 select-none mb-24">
   <div class="text-container max-w-5xl mx-auto px-4">
     <h1 class="mt-10 title text-4xl font-semibold text-center text-gray-200" id="about">
       What is MCMUN?
@@ -119,7 +119,7 @@
     </p>
   </div>
 </section>
-<section class="bg-zinc-900">
+<section class="bg-zinc-900 hidden">
   <div class="text-container max-w-5xl mx-auto px-4 mt-10">
     <h1 class="mt-10 title text-4xl font-semibold text-center text-gray-200" id="about">
       Meet our Sponsors

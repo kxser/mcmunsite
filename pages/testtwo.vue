@@ -1,160 +1,45 @@
 <template>
+  <div id="forums" class="min-w-full">
 
-<table class="min-w-full table-auto border-collapse border border-gray-200 rounded-lg overflow-hidden">
-  <thead class="bg-gray-800 text-white">
-    <tr>
-      <th class="px-6 py-3 text-left text-sm font-medium">Date</th>
-      <th class="px-6 py-3 text-left text-sm font-medium">Time</th>
-      <th class="px-6 py-3 text-left text-sm font-medium">Event</th>
-    </tr>
-  </thead>
-  <tbody class="text-gray-700">
-    <!-- 11 Nisan - Cuma -->
-    <tr class="bg-gray-100">
-      <td class="px-6 py-4 font-semibold">11 Nisan - Cuma</td>
-      <td class="px-6 py-4">16:00</td>
-      <td class="px-6 py-4">Registration</td>
-    </tr>
-    <tr>
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">16:15</td>
-      <td class="px-6 py-4">Music Performance</td>
-    </tr>
-    <tr class="bg-gray-100">
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">17:45</td>
-      <td class="px-6 py-4">Registration Closes</td>
-    </tr>
-    <tr>
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">17:55 - 18:30</td>
-      <td class="px-6 py-4">1st Session: All Committees</td>
-    </tr>
-    <tr class="bg-gray-100">
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">18:45 - 20:00</td>
-      <td class="px-6 py-4">Opening Ceremony</td>
-    </tr>
-    <tr>
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">20:00 - 22:00</td>
-      <td class="px-6 py-4">Chair Dinner</td>
-    </tr>
-    <tr class="bg-gray-100">
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">20:00 - 22:00</td>
-      <td class="px-6 py-4">Advisor Dinner</td>
-    </tr>
+    <div id="forum-bg" class="relative py-48 border-b-8 border-red-900">
+      <img src="/committees/disec.png" alt="Background" class="absolute top-0 left-0 w-full h-full blur-sm object-cover" />
+      <div class="container mx-auto text-center relative z-10">
+        <h1 class="text-5xl font-bold text-white">GA1 DISEC</h1>
+        
+      </div>
+    </div>
     
-    <!-- 12 Nisan - Cumartesi -->
-    <tr>
-      <td class="px-6 py-4 font-semibold">12 Nisan - Cumartesi</td>
-      <td class="px-6 py-4">08:30 - 08:50</td>
-      <td class="px-6 py-4">Student Officer Briefing</td>
-    </tr>
-    <tr class="bg-gray-100">
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">09:00 - 10:30</td>
-      <td class="px-6 py-4">2nd Session: All Committees</td>
-    </tr>
-    <tr>
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">10:30 - 11:00</td>
-      <td class="px-6 py-4">Coffee Break</td>
-    </tr>
-    <tr class="bg-gray-100">
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">11:00 - 12:30</td>
-      <td class="px-6 py-4">3rd Session: All Committees</td>
-    </tr>
-    <tr>
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">12:30 - 13:30</td>
-      <td class="px-6 py-4">Lunch Break</td>
-    </tr>
-    <tr class="bg-gray-100">
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">13:30 - 15:00</td>
-      <td class="px-6 py-4">4th Session: All Committees</td>
-    </tr>
-    <tr>
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">15:00 - 15:15</td>
-      <td class="px-6 py-4">Coffee Break</td>
-    </tr>
-    <tr class="bg-gray-100">
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">15:15 - 16:45</td>
-      <td class="px-6 py-4">5th Session</td>
-    </tr>
-    <tr>
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">16:45 - 17:00</td>
-      <td class="px-6 py-4">Coffee Break</td>
-    </tr>
-    <tr class="bg-gray-100">
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">17:00 - 18:40</td>
-      <td class="px-6 py-4">6th Session (Snack Distribution at 18:30)</td>
-    </tr>
-    <tr>
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">19:20</td>
-      <td class="px-6 py-4">Bus Departure</td>
-    </tr>
-    <tr class="bg-gray-100">
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">19:30 - 22:00</td>
-      <td class="px-6 py-4">Party</td>
-    </tr>
-    
-    <!-- 13 Nisan - Pazar -->
-    <tr>
-      <td class="px-6 py-4 font-semibold">13 Nisan - Pazar</td>
-      <td class="px-6 py-4">08:30 - 08:50</td>
-      <td class="px-6 py-4">Student Officer Briefing</td>
-    </tr>
-    <tr class="bg-gray-100">
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">09:00 - 10:30</td>
-      <td class="px-6 py-4">7th Session: All Committees</td>
-    </tr>
-    <tr>
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">10:30 - 11:00</td>
-      <td class="px-6 py-4">Coffee Break → High School Amphitheater</td>
-    </tr>
-    <tr class="bg-gray-100">
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">11:00 - 12:30</td>
-      <td class="px-6 py-4">8th Session: All Committees</td>
-    </tr>
-    <tr>
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">12:30 - 13:30</td>
-      <td class="px-6 py-4">Lunch Break → Cafeteria</td>
-    </tr>
-    <tr class="bg-gray-100">
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">13:30 - 15:00</td>
-      <td class="px-6 py-4">9th Session</td>
-    </tr>
-    <tr>
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">15:00 - 15:15</td>
-      <td class="px-6 py-4">Coffee Break → High School Amphitheater (Cookies, Tea, and Coffee)</td>
-    </tr>
-    <tr class="bg-gray-100">
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">15:15 - 16:45</td>
-      <td class="px-6 py-4">10th Session</td>
-    </tr>
-    <tr>
-      <td class="px-6 py-4"></td>
-      <td class="px-6 py-4">17:00 - 18:15</td>
-      <td class="px-6 py-4">Closing Ceremony → Culture Hall</td>
-    </tr>
-  </tbody>
-</table>
+    <div class="text-container max-w-5xl mx-auto px-4">
+      <USelectMenu v-model="selected" :options="people"  />
+  <h1 class="mt-10 title text-4xl font-semibold text-center text-gray-200" id="forum-description">
+    Overview
+  </h1>
+  <hr class="w-48 my-8 h-1 mx-auto  bg-gray-100 border-0 rounded md:my-6 dark:bg-gray-700">
+  <p class="mt-4 text-lg text-gray-400 mx-4 sm:mx-8 justify-center text-justify">
+    The General Assembly First Committee (GA1) on Disarmament and International Security (DISEC) is one of the six main committees of the United Nations General Assembly. It is tasked with addressing a wide range of issues related to global security, disarmament, and the prevention of armed conflict. DISEC plays a pivotal role in promoting international cooperation and dialogue on matters such as nuclear disarmament, arms control, and the peaceful use of outer space. In this forum, member states come together to debate, negotiate, and adopt resolutions aimed at enhancing global peace and stability, striving to reduce the threats posed by weapons and military conflict to ensure a safer world for future generations.
+  </p>
+  <h1 class="mt-10 title text-4xl font-semibold text-center text-gray-200" id="forum-description">
+    Agenda Items
+  </h1>
+  <hr class="w-48 h-1 mx-auto my-8 bg-gray-100 border-0 rounded md:my-6 dark:bg-gray-700">
+  
+    <ul class="list-disc">
+  <li class="mt-4 md:text-2xl text-xl  text-gray-400 mx-4 sm:mx-8 justify-center  break-words list-inside">Discussing the active terrorist/insurgent groups in Pakistan and Southeast Asia </li>
+  <li class="mt-4 md:text-2xl text-xl text-gray-400 mx-4 sm:mx-8 justify-center break-words list-inside">Debating the impact of cyber warfare in the 21st century </li>
+</ul>
+<div class="mb-24"></div>
+</div>
 
+
+  </div>
 </template>
+
+<script setup>
+definePageMeta({
+  layout: 'base'
+})
+
+const people = ['GA1 DISEC', 'Arlene Mccoy', 'Devon Webb', 'Tom Cook', 'Tanya Fox', 'Hellen Schmidt', 'Caroline Schultz', 'Mason Heaney', 'Claudie Smitham', 'Emil Schaefer']
+
+const selected = ref(people[0])
+</script>

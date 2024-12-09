@@ -193,7 +193,7 @@ const conferenceItems = [
     { label: "F.A.Q.", click: () => console.log("Edit") },
   ],
   [
-    { label: "WELCOME LETTER", click: () => console.log("Edit") },
+    { label: "WELCOME LETTER", click: () => navigateTo("/welcomeletter") },
     { label: "THEME LETTER", click: () => navigateTo("/themeletter") },
   ],
   [
@@ -206,7 +206,7 @@ const conferenceItemsMobile = [
     { label: "SCHEDULE", click: () => navigateTo("/schedule") },
     { label: "VENUE", click: () => console.log("Edit") },
     { label: "F.A.Q.", click: () => console.log("Edit") },
-    { label: "WELCOME LETTER", click: () => console.log("Edit") },
+    { label: "WELCOME LETTER", click: () => navigateTo("/welcomeletter") },
     { label: "THEME LETTER", click: () => navigateTo("/themeletter") },
     { label: "AGENDA ITEMS", click: () => console.log("Edit") },
   ],
