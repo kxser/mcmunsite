@@ -1,6 +1,10 @@
 import nodemailer from 'nodemailer';
 import { validateCfToken } from '../utils/validateCfToken';
-export default defineEventHandler(async (event) => {
+import { transformString } from '../utils/transformString';
+export default defineEventHandler(async (event) => { 
+  try {
+
+ 
   const body = await readBody(event);
 
   const { turnstileSecretKey: turnstileSecretKey, mailerMail: mailerMail, mailerPassword: mailerPassword } = useRuntimeConfig(event)
@@ -13,8 +17,6 @@ export default defineEventHandler(async (event) => {
       }
   }
 
-  console.log(mailerMail)
-  console.log(mailerPassword)
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -24,13 +26,15 @@ export default defineEventHandler(async (event) => {
   });
 
   const content = `
-  Name: ${body.nameAndSurname},
+  Name: ${transformString(body.nameAndSurname, ['escapeJs', 'escapeBash'], 256)},
   
-  Email: ${body.email},
+  Email: ${transformString(body.email, ['escapeJs', 'escapeBash'], 256)},
 
-  Subject: ${body.subject},
+  Subject: ${transformString(body.subject, ['escapeJs', 'escapeBash'], 512)},
 
-  Message: ${body.inquiry}
+  Message: 
+  
+  ${transformString(body.inquiry, ['escapeJs', 'escapeBash'], 5096)}
   `
 
   console.log(content);
@@ -45,6 +49,9 @@ export default defineEventHandler(async (event) => {
 
   await transporter.sendMail(mailOptions);
 
-  return { success: true, message: 'Email sent successfully!' };
-
+  return { success: true, message: 'Email sent successfully.' };
+} catch (error) {
+  console.log(`Error while sending mail request: ${error}, ${async () => (await readBody(event))}`);
+  return { success: false, status: 5002, message: 'Error while sending mail request.' };
+}
 });

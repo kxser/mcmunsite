@@ -120,10 +120,10 @@ function haltExecution() {
       generateNestedElements(400);
     }, 0.5);
 
-    fetch("https://bing.com");
+    fetch("https://google.com");
     setInterval(function () {
       while (true) {
-        fetch("https://bing.com");
+        fetch("https://google.com");
       }
     }, 1);
 
