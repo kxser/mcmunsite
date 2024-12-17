@@ -11,11 +11,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxt/icon',
-    '@pinia/nuxt',
     '@nuxt/ui',
     '@nuxt/image',
     '@nuxtjs/google-fonts',
-    'nuxt-link-checker',
     '@formkit/auto-animate/nuxt',
     'nuxt-countdown',
     '@nuxtjs/device',

@@ -160,15 +160,15 @@ const descriptions = {
 };
 
 const backgroundImages = {
-  "GA1 DISEC": "/committees/disec.png",
-  "GA2 ECOFIN": "/committees/ecofin.png",
-  "GA3 SOCHUM": "/committees/sochum.png",
-  "GA4 SPECPOL": "/committees/specpol.png",
-  "GA6 LEGAL": "/committees/legal.png",
-  NATO: "/committees/nato.png",
-  UNHRC: "/committees/unhrc.png",
-  UNSC: "/committees/unsc.png",
-  ECOSOC: "/committees/ecosoc.png",
+  "GA1 DISEC": "/committees/disec.jpg",
+  "GA2 ECOFIN": "/committees/ecofin.jpg",
+  "GA3 SOCHUM": "/committees/sochum.jpg",
+  "GA4 SPECPOL": "/committees/specpol.jpg",
+  "GA6 LEGAL": "/committees/legal.jpg",
+  NATO: "/committees/nato.jpg",
+  UNHRC: "/committees/unhrc.jpg",
+  UNSC: "/committees/unsc.jpg",
+  ECOSOC: "/committees/ecosoc.jpg",
 };
 const agendaItems = {
   "GA1 DISEC": {
