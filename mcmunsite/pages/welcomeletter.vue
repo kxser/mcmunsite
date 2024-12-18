@@ -70,28 +70,31 @@
         </p>
       </div>
       <div class="mb-20"></div>
-      <div class="flex justify-between items-center mt-6 relative mb-16">
+      <div class="flex justify-between items-center mt-6 relative mb-24">
         <div class="text-lg font-serif text-gray-800 relative">
-          <p class="font-semibold">Damla Çiçek Karamercan</p>
+          <p class="font-semibold">Damla Karamercan</p>
           <p>Secretary General</p>
+          <p>_____________</p>
           <!-- Signature SVG -->
           <NuxtImg
             src="/damla.svg"
             alt="Damla Signature"
-            class="absolute -bottom-10 left-5 rotate-12 w-100vh h-auto red-900"
+            class="absolute -bottom-3 right-4  rotate-13  w-128 red-900"
           />
         </div>
         <!-- First Signature Section -->
         <div class="text-lg font-serif text-gray-800 relative">
           <p class="font-semibold">Asya Göymen</p>
           <p>Secretary General</p>
+          <p>_____________</p>
           <!-- Signature SVG -->
           <NuxtImg
             src="/asia.svg"
             alt="Asya Signature"
-            class="absolute -bottom-10 left-10 rotate-12 w-16 h-auto"
+            class="absolute -bottom-5 left-10 rotate-12 w-12 h-auto"
           />
         </div>
+
         <!-- Second Signature Section -->
       </div>
     </div>

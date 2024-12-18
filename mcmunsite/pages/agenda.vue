@@ -115,6 +115,8 @@
 </template>
 
 <script setup>
+await navigateTo("/comingsoon");
+
 import { ref, computed } from "vue";
 const toast = useToast();
 definePageMeta({

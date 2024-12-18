@@ -50,7 +50,7 @@
           </Countdown>
 
           <div id="dates" class="flex items-center space-x-2 mt-3 font-semibold bg-zinc-800 rounded-xl p-2 mb-10 text-white">
-            <span>11 - 13 April 2025</span>
+            <span>12 - 13 April 2025</span>
           </div>
         </div>
       </div>

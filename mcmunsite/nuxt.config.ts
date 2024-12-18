@@ -8,6 +8,9 @@ export default defineNuxtConfig({
       ]
     }
   },
+  colorMode: {
+    preference: "dark",
+  },
   devtools: { enabled: true },
   modules: [
     '@nuxt/icon',

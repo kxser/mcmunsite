@@ -36,6 +36,9 @@
 </template>
 
 <script setup lang="ts">
+await navigateTo("/comingsoon");
+
+
 definePageMeta({
   layout: "base",
 });
