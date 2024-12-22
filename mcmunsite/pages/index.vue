@@ -117,7 +117,7 @@
       <h1 class="mt-10 title text-4xl font-semibold text-center text-gray-200" id="about">What is MCMUN?</h1>
       <hr class="w-48 h-1 mx-auto mt-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700">
       <p class="mt-4 text-lg text-gray-400 mx-4 sm:mx-36 justify-center text-justify">
-        MCMUN is a renowned <b class="font-semibold underline decoration-red-600 decoration-2">Model United Nations conference</b> that was founded in
+        Metu College (ODTÜ Koleji) Model United Nations is a renowned <b class="font-semibold underline decoration-red-600 decoration-2">conference</b> that was founded in
         2007 with the goal of simulating the operations of the United Nations. The event provides students with a chance to immerse themselves in global
         diplomacy and policymaking, gaining a deeper understanding of international relations and the challenges the world faces.
       </p>
@@ -146,8 +146,8 @@
 </template>
 
 <script setup lang="ts">
-disableContextMenu();
-disableDevTools();
+//disableContextMenu();
+//disableDevTools();
 const screenWidth = ref(0);
 
 const updateWidth = () => {

@@ -9,6 +9,6 @@
 </template>
 
 <script lang="ts" setup>
-disableContextMenu();
-disableDevTools();
+//disableContextMenu();
+//disableDevTools();
 </script>

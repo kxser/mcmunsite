@@ -30,11 +30,11 @@ useHead({
   meta: [
     { 
       name: "description", 
-      content: "MCMUN 2025 (METU College Model United Nations) is a premier Model United Nations conference, fostering global diplomacy and leadership for high school students." 
+      content: "MCMUN 2025 (METU College Model United Nations, ODTÜ Koleji Model Birleşmiş Milletler Konferansı) is a premier Model United Nations conference, fostering global diplomacy and leadership for high school students." 
     },
     {
       name: "keywords",
-      content: "MCMUN 2025, METU College Model United Nations, MUN 2025, Model UN, International Diplomacy, Student Leadership, Global Conference"
+      content: "MCMUN 2025, METU College Model United Nations, MUN 2025, Model UN, International Diplomacy, Student Leadership, Global Conference, ODTÜ MUN, odtü, metu mun, ankara mun, ankara, bilkent mun"
     }, 
     { 
       name: "robots", 
@@ -42,7 +42,7 @@ useHead({
     },
     { 
       property: "og:description", 
-      content: "Participate in MCMUN 2025 to engage in thought-provoking debates and diplomatic simulations at METU College." 
+      content: "Participate in MCMUN 2025 to engage in thought-provoking debates and diplomatic simulations at METU College (ODTÜ Koleji)." 
     },
     { 
       property: "og:type", 

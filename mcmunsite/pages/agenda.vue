@@ -1,4 +1,5 @@
 <template>
+  <PrivateLinkGuard />
   <div id="forums" class="min-w-full select-none">
     <div id="forum-bg" class="relative py-48 border-b-8 border-red-900">
       <NuxtImg
@@ -115,7 +116,7 @@
 </template>
 
 <script setup>
-await navigateTo("/comingsoon");
+
 
 import { ref, computed } from "vue";
 const toast = useToast();

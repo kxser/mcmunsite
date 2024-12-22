@@ -50,7 +50,7 @@
       />
     </div>
     <div class="flex justify-center items-center mt-5 mx-auto text-center">
-      <NuxtImg src="/logo_transparent.png" class="w-64" />
+      <NuxtImg src="/logo_transparent.png" class="w-64" alt="Logo for the MCMUN (ODTÜ Koleji MUN) conference." />
     </div>
   </div>
 </template>

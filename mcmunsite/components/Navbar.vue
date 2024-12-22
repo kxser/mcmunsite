@@ -14,7 +14,7 @@
         <NuxtImg
             loading="lazy"
           src="/logo_transparent.png"
-          alt="MCMUN Logo"
+          alt="Logo for the MCMUN (ODTÜ Koleji MUN) conference."
           class="h-10 group-hover:text-gray-500"
         />
         <a href="#" class="group-hover:text-gray-500 text-xl font-bold flex items-center">MCMUN 2025</a>
@@ -141,7 +141,7 @@
           </div>
         </template>
         <div class="space-y-4">
-          <UInput color="gray" variant="outline" placeholder="Name and Surname" v-model="contactFormNameAndSurname"/>        
+          <UInput color="gray" variant="outline" placeholder="Name" v-model="contactFormNameAndSurname"/>        
           <UInput color="gray" variant="outline" placeholder="E-Mail" v-model="contactFormEmail"/>
 
           <UInput color="gray" variant="outline" placeholder="Subject" v-model="contactFormSubject"/>
