@@ -27,6 +27,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       turnstileSiteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY ?? "",
+      pageSecurityIsEnabled: process.env.NUXT_PUBLIC_PAGE_SECURITY_IS_ENABLED ?? "",
     },
     turnstileSecretKey: process.env.NUXT_TURNSTILE_SECRET_KEY ?? "",
     mailerPassword: process.env.NUXT_MAILER_PASSWORD ?? "",

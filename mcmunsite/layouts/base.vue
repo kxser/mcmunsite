@@ -9,6 +9,12 @@
 </template>
 
 <script lang="ts" setup>
-//disableContextMenu();
-//disableDevTools();
+const pageSecurityIsEnabled = useRuntimeConfig().public.pageSecurityIsEnabled;
+
+if (pageSecurityIsEnabled) {
+  disableContextMenu();
+  disableDevTools();
+}
+
+
 </script>

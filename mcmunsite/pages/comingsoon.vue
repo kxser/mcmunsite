@@ -17,7 +17,7 @@ const handleError = () => clearError({ redirect: '/' });
 
 <template class="bg-zinc-800">
   <div class="flex flex-col items-center min-h-screen bg-zinc-900">
-    <img src="/logo_transparent.png" class="w-3/6 sm:w-1/6 mt-20" alt="MCMUN LOGO" />
+    <img src="/logo_transparent.png" class="w-3/6 sm:w-1/6 mt-20" alt="Logo for the MCMUN (ODTÜ Koleji MUN) conference." />
     <h1 class="font-bold md:text-9xl text-center text-7xl text-white mt-8">Coming Soon...</h1>
     <p v-if="!isTablet" class="text-xl mx-auto md:w-2/6 w-5/6 text-gray-500 font-medium  mt-8 ">More info regarding the contents of this page may be attached to the email you have received after filling the initial application form.</p>
     <button
