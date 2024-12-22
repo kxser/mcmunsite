@@ -8,17 +8,17 @@
             <div class="text-sm text-left flex-1 sm:justify-start flex flex-col">
               <p>© MCMUN 2025, All rights reserved</p>
               <p class="text-xs text-slate-400">
-                Developed by
-                <a
-                  aria-label="developer"
-                  class="underline hover:text-gray-100 transition-colors hover:cursor-pointer"
-                  target="_blank"
-                  rel="noreferrer"
-                  @click="async () => await navigateTo('https://github.com/kxser', {external: true})"
-                >
-                  Derin Alan Ritter
-                </a>
-              </p>
+  Developed by
+  <span
+    aria-label="developer"
+    class="underline hover:text-gray-100 transition-colors hover:cursor-pointer"
+    target="_blank"
+    rel="noreferrer"
+    @click="async () => await navigateTo('https://github.com/kxser', {external: true})"
+  >
+    Derin Alan Ritter
+  </span>
+</p>
             </div>
             <div class="flex gap-4 justify-center flex-1">
               <a
@@ -29,7 +29,7 @@
                 class="hover:text-gray-400"
               >
                 <Icon name="i-lineicons-tiktok" class="size-8" dynamic />
-              </a>
+            </a>
               <a
                 href="https://www.instagram.com/_rimun/"
                 target="_blank"
@@ -38,17 +38,17 @@
                 class="hover:text-gray-400"
               >
                 <Icon name="i-mdi-instagram" class="size-8" dynamic />
-              </a>
+            </a>
             </div>
             <nav class="text-sm flex-1 sm:justify-end flex">
               <ul class="flex space-x-4">
                 <li>
-                  <a class="hover:text-gray-300 hover:cursor-pointer" @click="termsAndConditionsIsOpen = true"> 
+                  <p class="hover:text-gray-300 hover:cursor-pointer" @click="termsAndConditionsIsOpen = true"> 
                     Terms &amp; Conditions
-                  </a>
+                  </p>
                 </li>
                 <li>
-                  <a @click="cookieNotifierIsOpen = true"  class="hover:text-gray-300 hover:cursor-pointer">Cookies</a>
+                  <p @click="cookieNotifierIsOpen = true"  class="hover:text-gray-300 hover:cursor-pointer">Cookies</p>
                 </li>
               </ul>
             </nav>

@@ -39,22 +39,6 @@ useHead({
     { 
       name: "robots", 
       content: "index, follow" 
-    },
-    { 
-      property: "og:description", 
-      content: "Participate in MCMUN 2025 to engage in thought-provoking debates and diplomatic simulations at METU College (ODTÜ Koleji)." 
-    },
-    { 
-      property: "og:type", 
-      content: "website" 
-    },
-    { 
-      property: "og:image", 
-      content: "https://mcmun.com.tr" // Replace with the actual URL of the MCMUN 2025 preview image
-    },
-    { 
-      property: "og:url", 
-      content: "https://mcmun.com.tr" 
     }
   ],
   link: [

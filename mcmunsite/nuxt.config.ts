@@ -20,6 +20,12 @@ export default defineNuxtConfig({
     '@formkit/auto-animate/nuxt',
     'nuxt-countdown',
     '@nuxtjs/device',
+    '@nuxtjs/robots',
+    'nuxt-seo-utils',
+    'nuxt-og-image',
+    '@nuxtjs/sitemap',
+    'nuxt-site-config',
+    'nuxt-booster'
   ],
 
 
@@ -52,4 +58,3 @@ export default defineNuxtConfig({
     },
   },
 })
-

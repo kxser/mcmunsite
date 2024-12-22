@@ -5,7 +5,7 @@
   <section v-if="!isWidthInRange" id="home" class="select-none bg-gray-100 relative overflow-hidden lg:h-[66vh] sm:min-h-[90vh]">
     <div id="hero" class="relative flex flex-col items-center justify-center text-center h-full">
       <div class="absolute inset-0 w-full h-full">
-        <img src="/panel1.jpg" alt="Background image depicting the Kültür Merkezi of ODTÜ Geliştirme Vakfı Okulları (ODTÜ Koleji, Metu) campus for the MCMUN 2025 MUN conference. The photo was taken last year at 4 PM, near the ODTÜ MUN center." class="w-full h-full object-cover lg:object-cover sm:object-fill z-0" />
+        <img src="/panel1.webp" alt="Background image depicting the Kültür Merkezi of ODTÜ Geliştirme Vakfı Okulları (ODTÜ Koleji, Metu) campus for the MCMUN 2025 MUN conference. The photo was taken last year at 4 PM, near the ODTÜ MUN center." class="w-full h-full object-cover lg:object-cover sm:object-fill z-0" />
         <div class="absolute inset-0 bg-gradient-to-b from-black to-bg-gray-900 opacity-90"></div>
       </div>
 
@@ -60,7 +60,7 @@
   <section v-if="isWidthInRange" id="home" class="select-none bg-gray-100 relative overflow-hidden lg:h-[66vh]">
     <div id="hero" class="relative flex flex-col items-center justify-center text-center h-full">
       <div class="absolute inset-0 w-full h-full">
-        <NuxtImg src="/panel1.jpg" alt="Background image depicting the Kültür Merkezi of ODTÜ Geliştirme Vakfı Okulları (ODTÜ Koleji, Metu) campus for the MCMUN 2025 MUN conference. The photo was taken last year at 4 PM, near the ODTÜ MUN center." class="h-full object-cover lg:object-cover sm:object-fill z-0" />
+        <NuxtImg src="/panel1.webp" alt="Background image depicting the Kültür Merkezi of ODTÜ Geliştirme Vakfı Okulları (ODTÜ Koleji, Metu) campus for the MCMUN 2025 MUN conference. The photo was taken last year at 4 PM, near the ODTÜ MUN center." class="h-full object-cover lg:object-cover sm:object-fill z-0" />
         <div class="absolute inset-0 bg-gradient-to-b from-black to-bg-gray-900 opacity-90"></div>
       </div>
 
@@ -172,6 +172,8 @@ onUnmounted(() => {
 useHead({
   title: "MCMUN 2025",
 });
+
+
 </script>
 
 <style scoped>
