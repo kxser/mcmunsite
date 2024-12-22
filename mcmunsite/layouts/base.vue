@@ -11,7 +11,7 @@
 <script lang="ts" setup>
 const pageSecurityIsEnabled = useRuntimeConfig().public.pageSecurityIsEnabled;
 
-if (pageSecurityIsEnabled) {
+if (pageSecurityIsEnabled === "1") {
   disableContextMenu();
   disableDevTools();
 }
