@@ -46,6 +46,21 @@
             content:
               'Delegations will be assigned 1 month before the conference at the absolute latest. Notifications will be sent to all registered participants.',
           },
+          {
+            label: '7. Will lodging be provided for attendees coming from outside of Ankara?',
+            content:
+              'We will not provide any lodging however delegates wishing for reccommendations can get in contact.',
+          },
+          {
+            label: '8. What is the conference fee?',
+            content:
+              'Attendees wishing to get information about the conference fees can do so as a part of the the applicaton process or by directly getting contact with us.',
+          },
+          {
+            label: '9. Will there be any certificates for attending MCMUN 2025?',
+            content:
+              'Yes, we will have certificates for attendees who fulfill certain requirements.',
+          },
         ]"
       />
     </div>

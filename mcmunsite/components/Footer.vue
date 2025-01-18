@@ -31,7 +31,7 @@
                 <Icon name="i-lineicons-tiktok" class="size-8" dynamic />
             </a>
               <a
-                href="https://www.instagram.com/_rimun/"
+                href="https://www.instagram.com/metucollegemun/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"

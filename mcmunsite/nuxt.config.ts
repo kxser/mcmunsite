@@ -21,7 +21,6 @@ export default defineNuxtConfig({
     'nuxt-countdown',
     '@nuxtjs/device',
     '@nuxtjs/robots',
-    'nuxt-seo-utils',
     'nuxt-og-image',
     '@nuxtjs/sitemap',
     'nuxt-site-config',
