@@ -6,7 +6,7 @@
         <div class="container mx-auto px-4">
           <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <div class="text-sm text-left flex-1 sm:justify-start flex flex-col">
-              <p>© MCMUN 2025, All rights reserved</p>
+              <p>© MCMUN 2025, All rights reserved.</p>
               <p class="text-xs text-slate-400">
   Developed by
   <span
@@ -14,11 +14,13 @@
     class="underline hover:text-gray-100 transition-colors hover:cursor-pointer"
     target="_blank"
     rel="noreferrer"
-    @click="async () => await navigateTo('https://github.com/kxser', {external: true})"
+    @click="async () => await navigateTo('https://www.linkedin.com/in/d-alan-ritter-441403348/', {external: true})"
   >
     Derin Alan Ritter
   </span>
 </p>
+  <div class="text-xs text-slate-400">Built with <NuxtLink to="https://nuxt.com/" external class="underline hover:text-gray-100 transition-colors hover:cursor-pointer">Nuxt</NuxtLink>, Icons from <NuxtLink to="https://icones.js.org/" external class="underline hover:text-gray-100 transition-colors hover:cursor-pointer">icones.js.org</NuxtLink></div>
+
             </div>
             <div class="flex gap-4 justify-center flex-1">
               <a

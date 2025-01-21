@@ -274,6 +274,7 @@ const conferenceItems = [
   [
     { label: "SCHEDULE", click: () => (navigateTo("/schedule")) },
     { label: "F.A.Q.", click: () => navigateTo("/faq") },
+    { label: "ORGANIZATION STAFF", click: () => navigateTo("/staff") },
   ],
   [
     { label: "WELCOME LETTER", click: () => navigateTo("/welcomeletter") },
@@ -288,6 +289,7 @@ const conferenceItemsMobile = [
   [
     { label: "SCHEDULE", click: () => navigateTo("/schedule") },
     { label: "F.A.Q.", click: () => navigateTo("/faq") },
+    { label: "ORGANIZATION STAFF", click: () => navigateTo("/staff") },
     { label: "WELCOME LETTER", click: () => navigateTo("/welcomeletter") },
     { label: "THEME LETTER", click: () => navigateTo("/themeletter") },
     { label: "AGENDA ITEMS", click: () => navigateTo("/agenda")},

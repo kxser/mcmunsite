@@ -12,7 +12,7 @@
       ></div>
       <div class="container mx-auto text-center relative z-10">
         <h1 class="text-5xl font-bold text-white drop-shadow-2xl">
-          {{ selected }}
+          {{ selected }} 
         </h1>
       </div>
     </div>
