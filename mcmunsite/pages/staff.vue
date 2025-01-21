@@ -38,7 +38,7 @@
       <div class="absolute inset-0 bg-black opacity-95"></div>
       <div class="relative z-10 text-white text-center p-4 rounded-lg">
       <Icon name="i-svg-spinners-3-dots-fade" dynamic class="size-32" />
-      <h1 class="text-3xl text-bold">Please wait while the images load.</h1>
+
     </div>
     </div>
 
@@ -55,7 +55,6 @@
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             <NuxtImg
-              lazy
               draggable="false"
               v-for="index in 10"
               :key="index"
@@ -77,34 +76,42 @@
   </div>
 </template>
 
-<script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+<script setup lang="ts">
+// filepath: /home/kaiser/Desktop/mcmunsite/pages/staff.vue
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 const modalIsOpen = ref(false);
 const loading = ref(true);
-const currentImageIndex = ref(1);
+const currentImageIndex = ref(0);
 const watchedDiv = ref(null);
 let previousHeight = 0;
-let resizeObserver;
+let resizeObserver: ResizeObserver | null = null;
 
-function openModal(index) {
+function openModal(index: number) {
   currentImageIndex.value = index;
   modalIsOpen.value = true;
 }
 
 onMounted(() => {
-  resizeObserver = new ResizeObserver((entries) => {
-    for (let entry of entries) {
-      const newHeight = entry.contentRect.height;
-      if (newHeight > previousHeight * 2) {
-        loading.value = false;
-      }
-      previousHeight = newHeight;
-      console.log("Size changed:", entry.contentRect);
-    }
-  });
-
   if (watchedDiv.value) {
+    previousHeight = watchedDiv.value.clientHeight;
+
+    resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const newHeight = entry.contentRect.height;
+        console.log('New height:', newHeight);
+        console.log('Previous height:', previousHeight);
+
+        if (newHeight > previousHeight * 2) {
+          loading.value = false;
+          console.log('Loading complete.');
+        }
+
+        previousHeight = newHeight;
+        console.log('Size changed:', entry.contentRect);
+      }
+    });
+
     resizeObserver.observe(watchedDiv.value);
   }
 });
@@ -112,6 +119,8 @@ onMounted(() => {
 onBeforeUnmount(() => {
   if (watchedDiv.value && resizeObserver) {
     resizeObserver.unobserve(watchedDiv.value);
+    resizeObserver.disconnect();
+    console.log('ResizeObserver disconnected.');
   }
 });
 
