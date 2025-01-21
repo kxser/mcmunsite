@@ -2,7 +2,7 @@
   <div class="pt-24 pb-24 select-none">
     <h1
       class="md:text-6xl text-5xl font-bold text-white drop-shadow-2xl text-center mx-auto mb-8"
-    >
+    v-show="!loading">
       Organization Staff
     </h1>
     <div class="z-[999]">
@@ -34,16 +34,16 @@
       </UModal>
     </div>
 
-    <div v-show="loading" class="fixed inset-0 flex items-center justify-center z-[998]">
-      <div class="absolute inset-0 bg-black opacity-95"></div>
-      <div class="relative z-10 text-white text-center p-4 rounded-lg">
-      <Icon name="i-svg-spinners-3-dots-fade" dynamic class="size-32" />
 
+    <div v-show="loading" class="mt-12">
+      <div class="flex justify-center">
+        <Icon name="i-svg-spinners-3-dots-rotate" dynamic class="size-32 mb-4 text-center" />
+        
+      </div>
+      <p class="text-center">Please be patient while the images are loaded.</p>
+      <div class="h-screen"></div>
     </div>
-    </div>
-
-    <div ref="watchedDiv">
-      <ClientOnly fallbackTag="span">
+    <div v-show="!loading" >
         <div
           class="flex flex-col items-center justify-center md:py-12 md:px-32 px-5 py-5"
         >
@@ -53,83 +53,56 @@
               about the images.
             </p>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             <NuxtImg
               draggable="false"
               v-for="index in 10"
               :key="index"
               :src="`/staff/${index}.webp`"
-              class="w-full h-auto border-2 border-gray-800 rounded-lg p-1 roundex-xl object-fit hover:scale-105 transition-transform duration-300 cursor-pointer"
+              class="w-full h-auto border-2 border-gray-800 rounded-lg p-1 rounded-xl object-fit hover:scale-105 transition-transform duration-300 cursor-pointer"
               alt="Staff Image"
               @click="openModal(index)"
+              @load="imageLoaded()"
             />
           </div>
         </div>
-        <Comments />
-        <template #fallback>
-          <UProgress class="px-32" size="2xl" animation="swing" />
-          <div class="px-32">
-          </div>
-        </template>
-      </ClientOnly>
+
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-// filepath: /home/kaiser/Desktop/mcmunsite/pages/staff.vue
+
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 const modalIsOpen = ref(false);
 const loading = ref(true);
 const currentImageIndex = ref(0);
-const watchedDiv = ref(null);
-let previousHeight = 0;
-let resizeObserver: ResizeObserver | null = null;
+const totalImages = 10;
+const loadedImages = ref(1);
+
 
 function openModal(index: number) {
   currentImageIndex.value = index;
   modalIsOpen.value = true;
 }
 
-onMounted(() => {
-  if (watchedDiv.value) {
-    previousHeight = watchedDiv.value.clientHeight;
 
-    resizeObserver = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        const newHeight = entry.contentRect.height;
-        console.log('New height:', newHeight);
-        console.log('Previous height:', previousHeight);
-
-        if (newHeight > previousHeight * 2) {
-          loading.value = false;
-          console.log('Loading complete.');
-        }
-
-        previousHeight = newHeight;
-        console.log('Size changed:', entry.contentRect);
-      }
-    });
-
-    resizeObserver.observe(watchedDiv.value);
+function imageLoaded () {
+  console.log(loading);
+  loadedImages.value += 1;
+  if (loadedImages.value === totalImages) {
+    loading.value = false;
   }
-});
+}
 
-onBeforeUnmount(() => {
-  if (watchedDiv.value && resizeObserver) {
-    resizeObserver.unobserve(watchedDiv.value);
-    resizeObserver.disconnect();
-    console.log('ResizeObserver disconnected.');
-  }
-});
 
 
 const categoryDescriptions = {
   1: "The Secretaries General are the pillars of an MUN Conference. They are responsible for coordinating and holding the elements of a conference together, creating an organization as a team that is unforgettable, educational and above all; worth every second of your precious time.",
   2: "The Deputy Generals are the perfectionists, the ones who present a helping hand to get everything done clearly, concisely and precisely.",
   3: `I am indescribably proud to serve as your President of the General Assembly, a position which I dreamed of being in, ever since last year's conference, and one which I believe is crucial for the conference as a whole. I sincerely hope that we will not just meet, but exceed all of your expectations for MCMUN'25. See you in April!`,
-  4: "As Heads of Advisors, we make sure that everything runs smoothly between the advisors and the organizing team. We work together to guide the advisors so that they can assist delegates with things like research, speeches, and understanding the rules of MUN. We’re also here to maintain a clear communication as well as solving any issues that may come up while making sure everyone feels prepared and confident. Our goal is to create a supportive and productive environment for everyone involved.",
+  4: "As Heads of Advisors, we make sure that everything runs smoothly between the advisors and the organizing team. We work together to guide the advisors so that they can assist delegates with things like research, speeches, and understanding the rules of MUN. Our goal is to create a supportive and productive environment for everyone involved.",
   5: "The I.T. department is responsible for the technical infrastructure of the conference. We are here to ensure that the conference runs smoothly and that all participants have a seamless experience.",
   6: "The finance department is responsible for the financial management of the conference. This includes budgeting, financial planning, and ensuring that all financial transactions are conducted smoothly and efficiently. They say money isn’t happiness… It is.",
   7: "The Head of Admins is responsible for managing the bread and butter of the conference, our lovely admins.",
