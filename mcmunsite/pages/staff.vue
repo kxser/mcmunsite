@@ -32,18 +32,28 @@
           </p>
         </UCard>
       </UModal>
-
     </div>
 
-    <div>
+    <div v-show="loading" class="fixed inset-0 flex items-center justify-center z-[998]">
+      <div class="absolute inset-0 bg-black opacity-95"></div>
+      <div class="relative z-10 text-white text-center p-4 rounded-lg">
+      <Icon name="i-svg-spinners-3-dots-fade" dynamic class="size-32" />
+      <h1 class="text-3xl text-bold">Please wait while the images load.</h1>
+    </div>
+    </div>
+
+    <div ref="watchedDiv">
       <ClientOnly fallbackTag="span">
-        
         <div
           class="flex flex-col items-center justify-center md:py-12 md:px-32 px-5 py-5"
         >
-        <div><p class="text-gray-200 py-3 text-xs">You may click on the individual tiles to get more information about the images.</p></div>
+          <div>
+            <p class="text-gray-200 py-3 text-xs">
+              You may click on the individual tiles to get more information
+              about the images.
+            </p>
+          </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            
             <NuxtImg
               lazy
               draggable="false"
@@ -60,11 +70,6 @@
         <template #fallback>
           <UProgress class="px-32" size="2xl" animation="swing" />
           <div class="px-32">
-            <h1
-              class="text-3xl mt-2 text-gray-400 font-bold drop-shadow-2xl text-center mx-auto mb-8"
-            >
-              Please be patient while the image gallery loads.
-            </h1>
           </div>
         </template>
       </ClientOnly>
@@ -73,15 +78,44 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
 const modalIsOpen = ref(false);
+const loading = ref(true);
 const currentImageIndex = ref(1);
+const watchedDiv = ref(null);
+let previousHeight = 0;
+let resizeObserver;
 
 function openModal(index) {
   currentImageIndex.value = index;
   modalIsOpen.value = true;
 }
+
+onMounted(() => {
+  resizeObserver = new ResizeObserver((entries) => {
+    for (let entry of entries) {
+      const newHeight = entry.contentRect.height;
+      if (newHeight > previousHeight * 2) {
+        loading.value = false;
+      }
+      previousHeight = newHeight;
+      console.log("Size changed:", entry.contentRect);
+    }
+  });
+
+  if (watchedDiv.value) {
+    resizeObserver.observe(watchedDiv.value);
+  }
+});
+
+onBeforeUnmount(() => {
+  if (watchedDiv.value && resizeObserver) {
+    resizeObserver.unobserve(watchedDiv.value);
+  }
+});
+
+
 const categoryDescriptions = {
   1: "The Secretaries General are the pillars of an MUN Conference. They are responsible for coordinating and holding the elements of a conference together, creating an organization as a team that is unforgettable, educational and above all; worth every second of your precious time.",
   2: "The Deputy Generals are the perfectionists, the ones who present a helping hand to get everything done clearly, concisely and precisely.",
@@ -94,7 +128,6 @@ const categoryDescriptions = {
   9: "The PR team is the bridge between our MUN conference and the world beyond, handling everything from inviting schools and responding to applications to keeping everyone informed. Basically, if you’re here, it’s probably because we made sure you knew about it!",
   10: "The Press team is a group of independent yet intertwined people, where different thoughts and ideas come together. In fact, what keeps this team together is open-mindedness and imagination. With this, we hope to give you content that will shine a light on the conference as a whole.",
 };
-
 
 const categoryMembers = {
   1: "Damla Çiçek Karamercan, Asya Göymen",
