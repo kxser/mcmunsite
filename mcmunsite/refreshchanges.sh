@@ -1,0 +1,1 @@
+systemctl stop mcmunsite && pm2 stop all && npm run build && systemctl start mcmunsite
