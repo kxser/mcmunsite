@@ -113,6 +113,6 @@ definePageMeta({
 });
 
 useHead({
-  title: "MCMUN - Theme Letter",
+  title: "MCMUN - Organization Staff",
 });
 </script>
