@@ -46,6 +46,9 @@
     "vue-turnstile": "^1.0.11"
   },
   "devDependencies": {
+    "@iconify-json/lineicons": "^1.2.4",
+    "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/svg-spinners": "^1.2.2",
     "@types/nodemailer": "^6.4.17"
   }
 }

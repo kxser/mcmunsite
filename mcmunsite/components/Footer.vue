@@ -19,7 +19,7 @@
     Derin Alan Ritter
   </span>
 </p>
-  <div class="text-xs text-slate-400">Built with <NuxtLink to="https://nuxt.com/" external class="underline hover:text-gray-100 transition-colors hover:cursor-pointer">Nuxt</NuxtLink>, Icons from <NuxtLink to="https://icones.js.org/" external class="underline hover:text-gray-100 transition-colors hover:cursor-pointer">icones.js.org</NuxtLink></div>
+  <div class="text-xs text-slate-400">Built with <NuxtLink to="https://nuxt.com/" external class="underline hover:text-gray-100 transition-colors hover:cursor-pointer">Nuxt</NuxtLink>, icons from <NuxtLink to="https://iconify.design/" external class="underline hover:text-gray-100 transition-colors hover:cursor-pointer">Iconify</NuxtLink></div>
 
             </div>
             <div class="flex gap-4 justify-center flex-1">

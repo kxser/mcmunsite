@@ -2,7 +2,8 @@
   <div class="pt-24 pb-24 select-none">
     <h1
       class="md:text-6xl text-5xl font-bold text-white drop-shadow-2xl text-center mx-auto mb-8"
-    v-show="!loading">
+      v-show="!loading"
+    >
       Organization Staff
     </h1>
     <div class="z-[999]">
@@ -34,46 +35,45 @@
       </UModal>
     </div>
 
-
     <div v-show="loading" class="mt-12">
       <div class="flex justify-center">
-        <Icon name="i-svg-spinners-3-dots-rotate" dynamic class="size-32 mb-4 text-center" />
-        
+        <Icon
+          name="i-svg-spinners-3-dots-rotate"
+          class="size-32 mb-4 text-center"
+        />
       </div>
       <p class="text-center">Please be patient while the images are loaded.</p>
       <div class="h-screen"></div>
     </div>
-    <div v-show="!loading" >
-        <div
-          class="flex flex-col items-center justify-center md:py-12 md:px-32 px-5 py-5"
-        >
-          <div>
-            <p class="text-gray-200 py-3 text-xs">
-              You may click on the individual tiles to get more information
-              about the images.
-            </p>
-          </div>
-          <div  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <NuxtImg
-              draggable="false"
-              v-for="index in 10"
-              :key="index"
-              :src="`/staff/${index}.webp`"
-              class="w-full h-auto border-2 border-gray-800 rounded-lg p-1 rounded-xl object-fit hover:scale-105 transition-transform duration-300 cursor-pointer"
-              alt="Staff Image"
-              @click="openModal(index)"
-              @load="imageLoaded()"
-            />
-          </div>
+    <div v-show="!loading">
+      <div
+        class="flex flex-col items-center justify-center md:py-12 md:px-32 px-5 py-5"
+      >
+        <div>
+          <p class="text-gray-200 py-3 text-xs">
+            You may click on the individual tiles to get more information about
+            the images.
+          </p>
         </div>
-
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <NuxtImg
+            draggable="false"
+            v-for="index in 10"
+            :key="index"
+            :src="`/staff/${index}.webp`"
+            class="w-full h-auto border-2 border-gray-800 rounded-lg p-1 rounded-xl object-fit hover:scale-105 transition-transform duration-300 cursor-pointer"
+            alt="MCMUN 2025 Staff Member Image"
+            @click="openModal(index)"
+            @load="imageLoaded()"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
-
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
 const modalIsOpen = ref(false);
 const loading = ref(true);
@@ -81,22 +81,17 @@ const currentImageIndex = ref(0);
 const totalImages = 10;
 const loadedImages = ref(1);
 
-
-function openModal(index: number) {
+function openModal(index) {
   currentImageIndex.value = index;
   modalIsOpen.value = true;
 }
 
-
-function imageLoaded () {
-  console.log(loading);
+function imageLoaded() {
   loadedImages.value += 1;
   if (loadedImages.value === totalImages) {
     loading.value = false;
   }
 }
-
-
 
 const categoryDescriptions = {
   1: "The Secretaries General are the pillars of an MUN Conference. They are responsible for coordinating and holding the elements of a conference together, creating an organization as a team that is unforgettable, educational and above all; worth every second of your precious time.",

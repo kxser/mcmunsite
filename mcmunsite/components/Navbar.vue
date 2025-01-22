@@ -12,7 +12,7 @@
       >
       <NuxtLink to="/" class="text-xl font-bold flex items-center space-x-3 group hover:cursor-pointer ml-3 md:ml-0">
         <NuxtImg
-            loading="lazy"
+          draggable="false"
           src="/logo_transparent.png"
           alt="Logo for the MCMUN (ODTÜ Koleji MUN) conference."
           class="h-10 group-hover:text-gray-500"

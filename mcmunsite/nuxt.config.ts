@@ -2,6 +2,12 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   app: {
+    meta: [
+      {
+        'http-equiv': 'Content-Security-Policy',
+        content: "upgrade-insecure-requests; script-src 'self' *.cloudflareinsights.com; connect-src 'self' blob: https://mcmun.com.tr wss://https://mcmun.com; media-src 'self' https:; img-src 'self' data: blob: https:; default-src 'none'; base-uri 'self'; frame-ancestors 'none'; style-src 'self' 'unsafe-inline'; font-src 'self'; manifest-src 'self'"
+      }
+    ],
     head: {
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
