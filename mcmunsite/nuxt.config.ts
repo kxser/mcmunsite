@@ -19,7 +19,7 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
 
-  modules: ['@nuxt/icon', '@nuxt/ui', '@nuxt/image', '@nuxtjs/google-fonts', '@formkit/auto-animate/nuxt', 'nuxt-countdown', '@nuxtjs/device', '@nuxtjs/robots', 'nuxt-og-image', '@nuxtjs/sitemap', 'nuxt-site-config', 'nuxt-booster', '@sidebase/nuxt-auth'],
+  modules: ['@nuxt/icon', '@nuxt/ui', '@nuxt/image', '@nuxtjs/google-fonts', '@formkit/auto-animate/nuxt', 'nuxt-countdown', '@nuxtjs/device', '@nuxtjs/robots', '@nuxtjs/sitemap', 'nuxt-site-config', 'nuxt-booster', '@sidebase/nuxt-auth'],
   auth: {
     isEnabled: true,
     disableServerSideAuth: false,
