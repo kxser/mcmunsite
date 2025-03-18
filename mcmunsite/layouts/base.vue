@@ -16,12 +16,6 @@ if (pageSecurityIsEnabled === "1") {
   disableDevTools();
 }
 
-defineOgImageComponent('NuxtSeo', {
-  title: 'MCMUN',
-  description: 'METU College Model United Nations 2025',
-  theme: '#ff0000',
-  colorMode: 'dark',
-})
 
 
 </script>

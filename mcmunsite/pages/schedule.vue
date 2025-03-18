@@ -1,7 +1,4 @@
 <template>
-  <div>
-    <PrivateLinkGuard />
-  </div>
   <div class="pt-24 pb-24">
     <h1
       class="text-6xl font-bold text-white drop-shadow-2xl text-center mx-auto mb-8"
