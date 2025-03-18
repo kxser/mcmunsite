@@ -18,7 +18,12 @@
         </div>
 
         <button
-          @click="(async ()=> await navigateTo('/registrations/start'))"
+          @click="(async ()=> await navigateTo(
+  'https://docs.google.com/forms/d/e/1FAIpQLScSk5rGf-be80iHa8V1sUeyB3izui-magR5a9sjszklB00bHg/viewform?usp=header',
+  {
+    external: true,
+  }
+))"
           type="button"
           class="mt-20 inline-flex items-center px-16 py-5 bg-red-900 text-white font-medium rounded-xl shadow-sm hover:bg-red-600 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500"
         >

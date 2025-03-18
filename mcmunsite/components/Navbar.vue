@@ -63,7 +63,12 @@
 
         <!-- Registration Dropdown -->
         <li>
-          <UDropdown @click="() => { navigateTo('/registrations/start') }" :popper="{ placement: 'bottom-start' }">
+          <UDropdown @click="async () => { await navigateTo(
+  'https://docs.google.com/forms/d/e/1FAIpQLScSk5rGf-be80iHa8V1sUeyB3izui-magR5a9sjszklB00bHg/viewform?usp=header',
+  {
+    external: true,
+  }
+);}" :popper="{ placement: 'bottom-start' }">
             <div class="hover:text-gray-400 text-lg transition-colors">
               Registrations
             </div>
