@@ -1,10 +1,15 @@
 <template>
   <div class="">
-    <div class="bg-zinc-900 p-6  rounded  max-w-3xl mx-auto">
-        <h1 class="text-3xl font-bold text-gray-300 mb-6">Certificate Generation Tool Beta</h1>
+    <div class="bg-zinc-900 p-6 rounded max-w-3xl mx-auto">
+      <h1 class="text-3xl font-bold text-gray-300 mb-6">
+        Certificate Generation Tool Beta
+      </h1>
 
       <div class="mb-6">
-        <p class="text-yellow-400 mb-3">Please delete and rewrite the inputs of the textboxes before proceeding. Not doing so may cause unexpected errors.</p>
+        <p class="text-yellow-400 mb-3">
+          Please delete and rewrite the inputs of the textboxes before
+          proceeding. Not doing so may cause unexpected errors.
+        </p>
         <p class="mb-2 text-gray-300 text-sm">
           What is the title of the Certificate?
         </p>
@@ -50,7 +55,7 @@
 
   <div v-if="showCertificate">
     <div
-        ref="captureArea"
+      ref="captureArea"
       class=""
       style="width: 3508px; height: 2480px; font-family: 'PT Serif'"
     >
@@ -88,9 +93,8 @@
               class="text-center text-gray-700 mb-8 mx-64"
               style="font-size: 64px"
             >
-{{ certificateExplanation }}
+              {{ certificateExplanation }}
             </p>
-
           </div>
         </div>
       </div>
@@ -99,27 +103,22 @@
 </template>
 
 <script setup>
-
-const {
-
-  data,
-} = useAuth();
+const { data } = useAuth();
 const session = toRaw(data.value);
 if (session === null || session === undefined) {
   navigateTo("/");
-};
-const adminStatus = await $fetch("/api/auth/checkadmin", {method: "POST", body: JSON.stringify({email: session.user.email})});
+}
+const adminStatus = await $fetch("/api/auth/checkadmin", {
+  method: "POST",
+  body: JSON.stringify({ email: session.user.email }),
+});
 
 if (!adminStatus.isAdmin) {
-   navigateTo('/')
-} 
-
-
-
+  navigateTo("/");
+}
 
 import { ref, nextTick } from "vue";
 import html2canvas from "html2canvas";
-
 
 useHead({
   title: "MCMUN - Certificate Creator",
@@ -135,12 +134,11 @@ const showCertificate = ref(false);
 const captureArea = ref(null);
 
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-
 const startCreationProcess = async () => {
-    console.log("startCreationProcess");
+  console.log("startCreationProcess");
   showCertificate.value = true;
 
   // Wait for the DOM to update and the certificate to render

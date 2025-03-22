@@ -18,16 +18,29 @@
         </div>
 
         <button
-          @click="(async ()=> await navigateTo(
-  'https://docs.google.com/forms/d/e/1FAIpQLScSk5rGf-be80iHa8V1sUeyB3izui-magR5a9sjszklB00bHg/viewform?usp=header',
-  {
-    external: true,
-  }
-))"
+          @click="(() => {
+            if (isApplicationClosed()) {
+              const toast = useToast();
+              toast.add({
+      title: 'Applications have closed.',
+      description:
+        '',
+      color: 'red',
+      timeout: 5000,
+    });
+              return;
+            }
+            navigateTo('/applicationredirect');
+          })"
           type="button"
-          class="mt-20 inline-flex items-center px-16 py-5 bg-red-900 text-white font-medium rounded-xl shadow-sm hover:bg-red-600 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500"
+          :class="[
+            'mt-20 inline-flex items-center px-16 py-5 text-white font-medium rounded-xl shadow-sm focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500',
+            isApplicationClosed() 
+              ? 'bg-gray-500 cursor-not-allowed opacity-70' 
+              : 'bg-red-900 hover:bg-red-600 cursor-pointer'
+          ]"
         >
-          <p class="underline-effect">Register Now!</p>
+          <p class="underline-effect">Apply Now!</p>
         </button>
 
         <div id="cta" class="flex flex-col items-center">

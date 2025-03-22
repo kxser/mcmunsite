@@ -46,7 +46,7 @@
           <div class="font-bold text-white text-base sm:text-lg flex justify-between w-full">
             <span>20:00 - 22:00</span>
           </div>
-          <div class="text-gray-300 mt-1">Chair/Advisor Dinner</div>
+          <div class="text-gray-300 mt-1">Chair Dinner</div>
         </div>
       </div>
     </div>
@@ -95,8 +95,18 @@
           <div class="font-bold text-white text-base sm:text-lg flex justify-between w-full">
             <span>13:30 - 15:00</span>
           </div>
+          <div class="text-gray-300 mt-1">Advisor Lunch</div>
+        </div>
+
+        <div class="bg-zinc-800 rounded-lg p-4 shadow-md w-full">
+          <div class="font-bold text-white text-base sm:text-lg flex justify-between w-full">
+            <span>13:30 - 15:00</span>
+          </div>
           <div class="text-gray-300 mt-1">Committees in Session</div>
         </div>
+
+
+
         <div class="bg-zinc-800 rounded-lg p-4 shadow-md w-full">
           <div class="font-bold text-white text-base sm:text-lg flex justify-between w-full">
             <span>15:00 - 15:15</span>
@@ -120,12 +130,6 @@
             <span>17:00 - 18:40</span>
           </div>
           <div class="text-gray-300 mt-1">Committees in Session</div>
-        </div>
-        <div class="bg-zinc-800 rounded-lg p-4 shadow-md w-full">
-          <div class="font-bold text-white text-base sm:text-lg flex justify-between w-full">
-            <span>19:20</span>
-          </div>
-          <div class="text-gray-300 mt-1">Shuttles Leave</div>
         </div>
         <div class="bg-zinc-800 rounded-lg p-4 shadow-md w-full">
           <div class="font-bold text-white text-base sm:text-lg flex justify-between w-full">

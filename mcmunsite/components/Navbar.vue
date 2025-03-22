@@ -63,14 +63,25 @@
 
         <!-- Registration Dropdown -->
         <li>
-          <UDropdown @click="async () => { await navigateTo(
-  'https://docs.google.com/forms/d/e/1FAIpQLScSk5rGf-be80iHa8V1sUeyB3izui-magR5a9sjszklB00bHg/viewform?usp=header',
-  {
-    external: true,
-  }
-);}" :popper="{ placement: 'bottom-start' }">
-            <div class="hover:text-gray-400 text-lg transition-colors">
-              Registrations
+          <UDropdown @click="() => { 
+            if (isApplicationClosed()) {
+              const toast = useToast();
+              toast.add({
+      title: 'Applications have closed.',
+      description:
+        '',
+      color: 'red',
+      timeout: 5000,
+    });
+              return;
+            }
+            navigateTo('/applicationredirect');
+          }" :popper="{ placement: 'bottom-start' }">
+            <div :class="[
+              'text-lg transition-colors', 
+              isApplicationClosed() ? 'cursor-not-allowed opacity-70' : 'hover:text-gray-400 cursor-pointer'
+            ]">
+              Apply Now!
             </div>
           </UDropdown>
         </li>
@@ -130,7 +141,29 @@
         </div>
 
         <!-- Registration Dropdown for Mobile -->
-        <div @click="() => { navigateTo('/registrations/start');  isMobileMenuOpen = false }" class="text-lg hover:text-gray-500">Registration</div>
+        <div 
+          @click="() => { 
+            if (isApplicationClosed()) {
+              const toast = useToast();
+              toast.add({
+      title: 'Applications have closed.',
+      description:
+        '',
+      color: 'red',
+      timeout: 5000,
+    });
+              return;
+            }
+            navigateTo('/applicationredirect'); 
+            isMobileMenuOpen = false 
+          }" 
+          :class="[
+            'text-lg hover:text-gray-500', 
+            isApplicationClosed() ? 'cursor-not-allowed opacity-70' : 'cursor-pointer'
+          ]"
+        >
+          Apply Now!
+        </div>
       </div>
     </div>
   </nav>
@@ -160,13 +193,17 @@
 
 
 </template>
-
+  
 <script setup>
 import { ref, onMounted, watch, defineProps, onBeforeUnmount } from "vue";
 import autoAnimate from "@formkit/auto-animate";
+import { isApplicationClosed } from "~/composables/isApplicationClosed";
 const toast = useToast();
 const { isTablet } = useDevice()
-// Define the scroll threshold prop (with a default value of 120)
+
+
+
+
 const props = defineProps({
   scrollThreshold: {
     type: Number,
