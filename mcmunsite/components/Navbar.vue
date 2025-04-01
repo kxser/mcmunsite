@@ -4,6 +4,16 @@
     class="text-slate-200 z-[100] fixed w-full top-0 left-0"
     :class="navbarIsTransparent ? 'bg-transparent' : 'bg-zinc-800'"
   >
+  <UAlert v-if="useRoute().path === '/'" icon="i-heroicons-megaphone" color="white">
+    <template #title="{ title }">
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <span v-html="title" />
+    </template>
+
+    <template #description>
+      <p class="mx-auto text-center">Due to unforseen circumstances regarding the Ministry of Education, the conference has been postponed to October 2025. Please follow our Instagram for the latest updates.</p>
+    </template>
+  </UAlert>
     <div
       class="container mx-auto flex justify-between items-center py-5 select-none"
     >
